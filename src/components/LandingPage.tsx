@@ -215,11 +215,28 @@ export default function LandingPage() {
             <div className={s.phaseLabelActive}>Phase 0 &mdash; (NOW)</div>
             <div className={s.phaseTitle}>Foundation</div>
             <div className={s.phaseDesc}>
-              <s>Made By Ape brand license</s><br />
-              Start Marketing<br />
-              Select licensed manufacturing partner<br />
-              Finalize merch designs and suppliers<br />
-              Launch Utility NFT
+              <div className={s.checkItem}>
+                <div className={s.checkBoxChecked}>
+                  <svg className={s.checkMark} viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2.5 6.5L5 9L9.5 3.5" /></svg>
+                </div>
+                <span className={s.checkLabelDone}>Made By Ape brand license</span>
+              </div>
+              <div className={s.checkItem}>
+                <div className={s.checkBox} />
+                <span className={s.checkLabel}>Start Marketing</span>
+              </div>
+              <div className={s.checkItem}>
+                <div className={s.checkBox} />
+                <span className={s.checkLabel}>Select licensed manufacturing partner</span>
+              </div>
+              <div className={s.checkItem}>
+                <div className={s.checkBox} />
+                <span className={s.checkLabel}>Finalize some Merch designs and suppliers</span>
+              </div>
+              <div className={s.checkItem}>
+                <div className={s.checkBox} />
+                <span className={s.checkLabel}>Launch Utility NFT</span>
+              </div>
             </div>
           </div>
 
@@ -230,10 +247,22 @@ export default function LandingPage() {
             <div className={s.phaseLabel}>Phase 1 &mdash; Launch</div>
             <div className={s.phaseTitle}>NFT Mint &amp; Community</div>
             <div className={s.phaseDesc}>
-              Open public mint (500 supply)<br />
-              Build holder community on Discord &amp; X<br />
-              Holder verification &amp; gated access<br />
-              Early supporter rewards &amp; whitelist perks
+              <div className={s.checkItem}>
+                <div className={s.checkBox} />
+                <span className={s.checkLabel}>Open public mint (500 supply)</span>
+              </div>
+              <div className={s.checkItem}>
+                <div className={s.checkBox} />
+                <span className={s.checkLabel}>Build holder community on Discord &amp; X</span>
+              </div>
+              <div className={s.checkItem}>
+                <div className={s.checkBox} />
+                <span className={s.checkLabel}>Holder verification &amp; gated access</span>
+              </div>
+              <div className={s.checkItem}>
+                <div className={s.checkBox} />
+                <span className={s.checkLabel}>Early supporter rewards &amp; whitelist perks</span>
+              </div>
             </div>
           </div>
 
@@ -244,10 +273,22 @@ export default function LandingPage() {
             <div className={s.phaseLabel}>Phase 2 &mdash; Merch</div>
             <div className={s.phaseTitle}>Physical Drops</div>
             <div className={s.phaseDesc}>
-              First merch capsule — tees, hats, accessories<br />
-              Holder-exclusive claim windows<br />
-              Limited edition collaborations<br />
-              Pop-up events &amp; IRL activations
+              <div className={s.checkItem}>
+                <div className={s.checkBox} />
+                <span className={s.checkLabel}>First merch capsule — tees, hats, accessories</span>
+              </div>
+              <div className={s.checkItem}>
+                <div className={s.checkBox} />
+                <span className={s.checkLabel}>Holder-exclusive claim windows</span>
+              </div>
+              <div className={s.checkItem}>
+                <div className={s.checkBox} />
+                <span className={s.checkLabel}>Limited edition collaborations</span>
+              </div>
+              <div className={s.checkItem}>
+                <div className={s.checkBox} />
+                <span className={s.checkLabel}>Pop-up events &amp; IRL activations</span>
+              </div>
             </div>
           </div>
 
@@ -258,10 +299,22 @@ export default function LandingPage() {
             <div className={s.phaseLabel}>Phase 3 &mdash; Expand</div>
             <div className={s.phaseTitle}>Ecosystem &amp; Smart Devices</div>
             <div className={s.phaseDesc}>
-              Smart Vape device development<br />
-              OpenClaw integration &amp; AI companion<br />
-              Cross-brand partnerships<br />
-              Holder airdrops &amp; loyalty rewards
+              <div className={s.checkItem}>
+                <div className={s.checkBox} />
+                <span className={s.checkLabel}>Smart Vape device development</span>
+              </div>
+              <div className={s.checkItem}>
+                <div className={s.checkBox} />
+                <span className={s.checkLabel}>OpenClaw integration &amp; AI companion</span>
+              </div>
+              <div className={s.checkItem}>
+                <div className={s.checkBox} />
+                <span className={s.checkLabel}>Cross-brand partnerships</span>
+              </div>
+              <div className={s.checkItem}>
+                <div className={s.checkBox} />
+                <span className={s.checkLabel}>Holder airdrops &amp; loyalty rewards</span>
+              </div>
             </div>
           </div>
         </div>
