@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd:*)",
+      "Bash(cd D:/workspace/www/banana_start && npx create-next-app@latest . --typescript --tailwind --app --src-dir --import-alias \"@/*\" --yes 2>&1)",
+      "Bash(cd D:/workspace/www/banana_start && npm init -y 2>&1)",
+      "Bash(cd D:/workspace/www/banana_start && npm install next@latest react@latest react-dom@latest three cannon-es gsap howler zustand postprocessing 2>&1)",
+      "Bash(cd D:/workspace/www/banana_start && npm install -D typescript @types/node @types/react @types/react-dom @types/three @types/howler tailwindcss @tailwindcss/postcss postcss 2>&1)",
+      "Bash(true:*)",
+      "Bash(cd D:/workspace/www/banana_start && npx next build 2>&1)",
+      "Bash(python:*)",
+      "Bash(python3:*)",
+      "Bash(which python:*)",
+      "Bash(node:*)",
+      "Bash(sleep 6 && curl -s -o /dev/null -w \"HTTP Status: %{http_code}\\\\nSize: %{size_download} bytes\\\\n\" http://localhost:3000 2>&1)",
+      "Bash(start:*)",
+      "Bash(head:*)",
+      "Bash(curl:*)",
+      "WebSearch",
+      "WebFetch(domain:poly.pizza)",
+      "WebFetch(domain:sketchfab.com)",
+      "Bash(git add:*)"
+    ]
+  }
+}
