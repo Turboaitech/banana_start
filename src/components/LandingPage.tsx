@@ -15,6 +15,7 @@ export default function LandingPage() {
   const mintRef = useRef<HTMLElement>(null);
   const roadmapRef = useRef<HTMLElement>(null);
   const revealRefs = useRef<HTMLElement[]>([]);
+  const phaseGridRef = useRef<HTMLDivElement>(null);
 
   // Escape key closes menu
   useEffect(() => {
@@ -85,6 +86,43 @@ export default function LandingPage() {
       revealRefs.current.push(el);
     }
   }, []);
+
+  // Interactive 3D tilt on phase cards
+  const applyTilt = useCallback((card: HTMLElement, clientX: number, clientY: number) => {
+    const rect = card.getBoundingClientRect();
+    const x = clientX - rect.left;
+    const y = clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const isMobile = window.innerWidth < 768;
+    const strength = isMobile ? 6 : 10;
+    const rotateX = ((y - centerY) / centerY) * -strength;
+    const rotateY = ((x - centerX) / centerX) * strength;
+    card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
+    card.style.boxShadow = `0 25px 50px rgba(0, 0, 0, 0.4), 0 0 30px rgba(52, 211, 153, 0.08)`;
+  }, []);
+
+  const resetTilt = useCallback((card: HTMLElement) => {
+    card.style.transform = '';
+    card.style.boxShadow = '';
+  }, []);
+
+  const handleCardMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    applyTilt(e.currentTarget, e.clientX, e.clientY);
+  }, [applyTilt]);
+
+  const handleCardLeave = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    resetTilt(e.currentTarget);
+  }, [resetTilt]);
+
+  const handleCardTouchMove = useCallback((e: React.TouchEvent<HTMLDivElement>) => {
+    const touch = e.touches[0];
+    applyTilt(e.currentTarget, touch.clientX, touch.clientY);
+  }, [applyTilt]);
+
+  const handleCardTouchEnd = useCallback((e: React.TouchEvent<HTMLDivElement>) => {
+    resetTilt(e.currentTarget);
+  }, [resetTilt]);
 
   // Qty bounce animation
   const bounceQty = useCallback(() => {
@@ -207,13 +245,17 @@ export default function LandingPage() {
           ROADMAP
         </h1>
 
-        <div className={s.phaseGrid}>
+        <div className={s.phaseGrid} ref={phaseGridRef}>
           <div
             className={`${s.phaseCardActive} ${s.reveal}`}
             ref={addRevealRef}
+            onMouseMove={handleCardMove}
+            onMouseLeave={handleCardLeave}
+            onTouchMove={handleCardTouchMove}
+            onTouchEnd={handleCardTouchEnd}
           >
-            <div className={s.phaseLabelActive}>Phase 0 &mdash; (NOW)</div>
-            <div className={s.phaseTitle}>Foundation</div>
+            <div className={s.phaseLabelActive}>Phase 1 &mdash; (NOW)</div>
+
             <div className={s.phaseDesc}>
               <div className={s.checkItem}>
                 <div className={s.checkBoxChecked}>
@@ -243,25 +285,16 @@ export default function LandingPage() {
           <div
             className={`${s.phaseCard} ${s.reveal}`}
             ref={addRevealRef}
+            onMouseMove={handleCardMove}
+            onMouseLeave={handleCardLeave}
+            onTouchMove={handleCardTouchMove}
+            onTouchEnd={handleCardTouchEnd}
           >
-            <div className={s.phaseLabel}>Phase 1 &mdash; Launch</div>
-            <div className={s.phaseTitle}>NFT Mint &amp; Community</div>
+            <div className={s.phaseLabel}>Phase 2 &mdash; First Batch</div>
             <div className={s.phaseDesc}>
               <div className={s.checkItem}>
                 <div className={s.checkBox} />
-                <span className={s.checkLabel}>Open public mint (500 supply)</span>
-              </div>
-              <div className={s.checkItem}>
-                <div className={s.checkBox} />
-                <span className={s.checkLabel}>Build holder community on Discord &amp; X</span>
-              </div>
-              <div className={s.checkItem}>
-                <div className={s.checkBox} />
-                <span className={s.checkLabel}>Holder verification &amp; gated access</span>
-              </div>
-              <div className={s.checkItem}>
-                <div className={s.checkBox} />
-                <span className={s.checkLabel}>Early supporter rewards &amp; whitelist perks</span>
+                <span className={s.checkLabel}>Simple disposable featuring Logo</span>
               </div>
             </div>
           </div>
@@ -269,51 +302,28 @@ export default function LandingPage() {
           <div
             className={`${s.phaseCard} ${s.reveal}`}
             ref={addRevealRef}
+            onMouseMove={handleCardMove}
+            onMouseLeave={handleCardLeave}
+            onTouchMove={handleCardTouchMove}
+            onTouchEnd={handleCardTouchEnd}
           >
-            <div className={s.phaseLabel}>Phase 2 &mdash; Merch</div>
-            <div className={s.phaseTitle}>Physical Drops</div>
+            <div className={s.phaseLabel}>Phase 3 &mdash; Second Batch</div>
             <div className={s.phaseDesc}>
               <div className={s.checkItem}>
                 <div className={s.checkBox} />
-                <span className={s.checkLabel}>First merch capsule — tees, hats, accessories</span>
+                <span className={s.checkLabel}>Design a Tamagotchi-style smart vape</span>
               </div>
               <div className={s.checkItem}>
                 <div className={s.checkBox} />
-                <span className={s.checkLabel}>Holder-exclusive claim windows</span>
+                <span className={s.checkLabel}>Interactive &amp; personal — not just static art</span>
               </div>
               <div className={s.checkItem}>
                 <div className={s.checkBox} />
-                <span className={s.checkLabel}>Limited edition collaborations</span>
+                <span className={s.checkLabel}>Integrated with OpenClaw</span>
               </div>
               <div className={s.checkItem}>
                 <div className={s.checkBox} />
-                <span className={s.checkLabel}>Pop-up events &amp; IRL activations</span>
-              </div>
-            </div>
-          </div>
-
-          <div
-            className={`${s.phaseCard} ${s.reveal}`}
-            ref={addRevealRef}
-          >
-            <div className={s.phaseLabel}>Phase 3 &mdash; Expand</div>
-            <div className={s.phaseTitle}>Ecosystem &amp; Smart Devices</div>
-            <div className={s.phaseDesc}>
-              <div className={s.checkItem}>
-                <div className={s.checkBox} />
-                <span className={s.checkLabel}>Smart Vape device development</span>
-              </div>
-              <div className={s.checkItem}>
-                <div className={s.checkBox} />
-                <span className={s.checkLabel}>OpenClaw integration &amp; AI companion</span>
-              </div>
-              <div className={s.checkItem}>
-                <div className={s.checkBox} />
-                <span className={s.checkLabel}>Cross-brand partnerships</span>
-              </div>
-              <div className={s.checkItem}>
-                <div className={s.checkBox} />
-                <span className={s.checkLabel}>Holder airdrops &amp; loyalty rewards</span>
+                <span className={s.checkLabel}>Active users get airdropped (Seeker-style device)</span>
               </div>
             </div>
           </div>
