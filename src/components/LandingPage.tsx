@@ -145,7 +145,7 @@ export default function LandingPage() {
                 <div className={s.mintTitle}>Mint</div>
                 <div className={s.liveIndicator}>
                   <span className={s.liveDot} />
-                  Live
+                  Not ready yet
                 </div>
               </div>
 
@@ -157,13 +157,13 @@ export default function LandingPage() {
                 <div className={s.priceDivider} />
                 <div className={s.priceBlock}>
                   <div className={s.priceLabel}>Remaining</div>
-                  <div className={s.priceVal}>4,721 / 10,000</div>
+                  <div className={s.priceVal}>500 / 500</div>
                 </div>
               </div>
 
               <div className={s.progressWrap}>
                 <div className={s.progressBar}>
-                  <div className={s.progressFill} style={{ width: '52.79%' }} />
+                  <div className={s.progressFill} style={{ width: '0%' }} />
                 </div>
               </div>
 
@@ -212,32 +212,14 @@ export default function LandingPage() {
             className={`${s.phaseCardActive} ${s.reveal}`}
             ref={addRevealRef}
           >
-            <div className={s.phaseLabelActive}>Phase 1 &mdash; Now</div>
-            <div className={s.phaseTitle}>Utility NFTs</div>
+            <div className={s.phaseLabelActive}>Phase 0 &mdash; (NOW)</div>
+            <div className={s.phaseTitle}>Foundation</div>
             <div className={s.phaseDesc}>
-              Community-driven mint. Presale access to physical drops. Merch capsules for holders.
-            </div>
-          </div>
-
-          <div
-            className={`${s.phaseCard} ${s.reveal}`}
-            ref={addRevealRef}
-          >
-            <div className={s.phaseLabel}>Phase 2 &mdash; Next</div>
-            <div className={s.phaseTitle}>Brand &amp; Merch</div>
-            <div className={s.phaseDesc}>
-              #9491-inspired artwork. Limited tees, hats, accessories. Holder-only claim windows.
-            </div>
-          </div>
-
-          <div
-            className={`${s.phaseCard} ${s.reveal}`}
-            ref={addRevealRef}
-          >
-            <div className={s.phaseLabel}>Phase 3 &mdash; Later</div>
-            <div className={s.phaseTitle}>Smart Vape</div>
-            <div className={s.phaseDesc}>
-              Tamagotchi-style AI companion. OpenClaw integration. Smart-device airdrops for active users.
+              <s>Made By Ape brand license</s><br />
+              Start Marketing<br />
+              Select licensed manufacturing partner<br />
+              Finalize merch designs and suppliers<br />
+              Launch Utility NFT
             </div>
           </div>
         </div>
