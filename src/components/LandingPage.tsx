@@ -222,6 +222,48 @@ export default function LandingPage() {
               Launch Utility NFT
             </div>
           </div>
+
+          <div
+            className={`${s.phaseCard} ${s.reveal}`}
+            ref={addRevealRef}
+          >
+            <div className={s.phaseLabel}>Phase 1 &mdash; Launch</div>
+            <div className={s.phaseTitle}>NFT Mint &amp; Community</div>
+            <div className={s.phaseDesc}>
+              Open public mint (500 supply)<br />
+              Build holder community on Discord &amp; X<br />
+              Holder verification &amp; gated access<br />
+              Early supporter rewards &amp; whitelist perks
+            </div>
+          </div>
+
+          <div
+            className={`${s.phaseCard} ${s.reveal}`}
+            ref={addRevealRef}
+          >
+            <div className={s.phaseLabel}>Phase 2 &mdash; Merch</div>
+            <div className={s.phaseTitle}>Physical Drops</div>
+            <div className={s.phaseDesc}>
+              First merch capsule — tees, hats, accessories<br />
+              Holder-exclusive claim windows<br />
+              Limited edition collaborations<br />
+              Pop-up events &amp; IRL activations
+            </div>
+          </div>
+
+          <div
+            className={`${s.phaseCard} ${s.reveal}`}
+            ref={addRevealRef}
+          >
+            <div className={s.phaseLabel}>Phase 3 &mdash; Expand</div>
+            <div className={s.phaseTitle}>Ecosystem &amp; Smart Devices</div>
+            <div className={s.phaseDesc}>
+              Smart Vape device development<br />
+              OpenClaw integration &amp; AI companion<br />
+              Cross-brand partnerships<br />
+              Holder airdrops &amp; loyalty rewards
+            </div>
+          </div>
         </div>
       </section>
 
