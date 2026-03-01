@@ -9,8 +9,8 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: process.env.NEXT_PUBLIC_SITE_NAME,
-  description: process.env.NEXT_PUBLIC_SITE_DESCRIPTION,
+  title: 'Bored Vape',
+  description: 'DON\'T PEEL — A limited drop',
   icons: {
     icon: '/favicon.ico',
   },
