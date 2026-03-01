@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0f;
+  --foreground: #ffffff;
 }
 
 * {
@@ -29,9 +29,11 @@ body {
     transform: translateY(100%);
     opacity: 0;
   }
+
   30% {
     opacity: 1;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
@@ -39,11 +41,25 @@ body {
 }
 
 @keyframes hintPulse {
-  0%, 100% { opacity: 0.6; }
-  50%      { opacity: 1; }
+
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+
+  50% {
+    opacity: 1;
+  }
 }
 
 @keyframes hintBounce {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-6px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
 }
